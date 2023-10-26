@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+nav ul li {
+    color: orange;
+}
+
+nav ul li:hover{
+    background-color: #402218;
+}
