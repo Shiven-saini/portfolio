@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   description: 'Robotics Enthusiast • GPU & AI Engg. • Android Developer',
   keywords: ['Shiven Saini', 'Robotics', 'GPU Programming', 'AI Engineering', 'Android Developer'],
   authors: [{ name: 'Shiven Saini' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/logo.png',
+  },
 }
 
 export const viewport: Viewport = {
@@ -23,6 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+      </head>
       <body className={spaceGrotesk.className}>{children}</body>
     </html>
   )

@@ -25,7 +25,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            I&apos;m a passionate Android Developer with a strong foundation in computer science, robotics, 
+            I&apos;m a passionate learner with a strong foundation in robotics, android development
             and modern GPU programming. I thrive on building robust mobile apps, experimenting with 
             cutting-edge AI, and creating innovative robotics solutions. Currently investing my time 
             in CUDA programming, GPU computing, and the fascinating world of AI engineering.
