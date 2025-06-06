@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Box, Compass, Gamepad2, Brain } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const Learning = () => {
+  const { theme } = useTheme()
+  
   const learningItems = [
     { icon: Box, label: '3D Animation (Blender)' },
     { icon: Compass, label: 'CAD (Fusion 360)' },
@@ -13,7 +16,11 @@ const Learning = () => {
 
   return (
     <section className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-blue/5 to-transparent" />
+      <div className={`absolute inset-0 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-b from-transparent via-accent-blue/5 to-transparent' 
+          : 'bg-gradient-to-b from-transparent via-accent-blue/3 to-transparent'
+      }`} />
       
       <div className="relative max-w-6xl mx-auto px-6">
         <motion.div
@@ -26,7 +33,9 @@ const Learning = () => {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Currently Learning & Exploring
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className={`text-xl ${
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+          }`}>
             Always expanding my skillset with new technologies
           </p>
         </motion.div>
@@ -42,13 +51,25 @@ const Learning = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="group p-6 rounded-xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-sm hover:border-accent-blue/50 hover:bg-gray-800/40 transition-all duration-300"
+                className={`group p-6 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'border-gray-700/50 bg-gray-800/20 hover:border-accent-blue/50 hover:bg-gray-800/40'
+                    : 'border-gray-200/50 bg-white/60 hover:border-accent-blue/30 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                }`}
               >
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 rounded-lg bg-accent-blue/10 group-hover:bg-accent-blue/20 transition-colors duration-300">
+                  <div className={`p-3 rounded-lg transition-colors duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-accent-blue/10 group-hover:bg-accent-blue/20'
+                      : 'bg-accent-blue/10 group-hover:bg-accent-blue/15'
+                  }`}>
                     <Icon className="w-6 h-6 text-accent-blue" />
                   </div>
-                  <span className="font-medium text-white group-hover:text-accent-blue transition-colors duration-300">
+                  <span className={`font-medium transition-colors duration-300 ${
+                    theme === 'dark'
+                      ? 'text-white group-hover:text-accent-blue'
+                      : 'text-gray-900 group-hover:text-accent-blue'
+                  }`}>
                     {item.label}
                   </span>
                 </div>

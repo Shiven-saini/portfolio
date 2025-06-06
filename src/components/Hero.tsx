@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Github, ArrowRight } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
   const fullText = 'Shiven Saini'
+  const { theme } = useTheme()
 
   useEffect(() => {
     let currentIndex = 0
@@ -32,14 +34,20 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900/20 to-black" />
+      <div className={`absolute inset-0 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-br from-black via-gray-900/20 to-black' 
+          : 'bg-gradient-to-br from-gray-50 via-white/20 to-gray-100'
+      }`} />
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-accent-orange/30 rounded-full"
+            className={`absolute w-2 h-2 rounded-full ${
+              theme === 'dark' ? 'bg-accent-orange/30' : 'bg-accent-orange/20'
+            }`}
             animate={{
               x: [0, 100, 0],
               y: [0, -100, 0],
@@ -73,7 +81,7 @@ const Hero = () => {
               <motion.span
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="text-accent-orange"
+                className={theme === 'dark' ? 'text-accent-orange' : 'text-accent-primary'}
               >
                 |
               </motion.span>
@@ -83,7 +91,9 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="text-xl md:text-2xl text-gray-300 font-light"
+              className={`text-xl md:text-2xl font-light ${
+                theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+              }`}
             >
               Robotics Enthusiast • GPU & AI Engg. • Android Developer
             </motion.p>
@@ -94,7 +104,9 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            className={`text-lg max-w-2xl mx-auto leading-relaxed ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+            }`}
           >
             Passionate about building innovative solutions with cutting-edge technologies, 
             from robotics and AI to high-performance mobile applications
@@ -111,7 +123,11 @@ const Hero = () => {
               onClick={scrollToContact}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 bg-gradient-to-r from-accent-orange to-accent-yellow text-black font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent-orange/25"
+              className={`group relative px-8 py-4 font-semibold rounded-full overflow-hidden transition-all duration-300 ${
+                theme === 'dark'
+                  ? 'bg-gradient-to-r from-accent-orange to-accent-yellow text-black hover:shadow-lg hover:shadow-accent-orange/25'
+                  : 'bg-gradient-to-r from-accent-primary to-accent-secondary text-white hover:shadow-lg hover:shadow-accent-primary/25'
+              }`}
             >
               <span className="relative z-10 flex items-center gap-2">
                 Get In Touch
@@ -126,7 +142,11 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-6 py-4 border border-gray-700 hover:border-accent-orange text-gray-300 hover:text-white rounded-full transition-all duration-300 hover:bg-gray-800/50"
+                className={`flex items-center gap-2 px-6 py-4 border rounded-full transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'border-gray-700 hover:border-accent-orange text-gray-300 hover:text-white hover:bg-gray-800/50'
+                    : 'border-gray-300 hover:border-accent-primary text-gray-600 hover:text-gray-900 hover:bg-white/50'
+                }`}
               >
                 <Github size={20} />
                 GitHub
@@ -151,7 +171,11 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-gradient-to-b from-accent-orange to-accent-yellow rounded-full mt-2"
+            className={`w-1 h-3 rounded-full mt-2 ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-b from-accent-orange to-accent-yellow'
+                : 'bg-gradient-to-b from-accent-primary to-accent-secondary'
+            }`}
           />
         </motion.div>
       </motion.div>

@@ -6,6 +6,42 @@
 :root {
   --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #ffd700 100%);
   --gradient-secondary: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  --gradient-primary-light: linear-gradient(135deg, #3f403b 0%, #5a5d54 100%);
+  
+  /* Dark mode colors (default) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --shadow-primary: rgba(0, 0, 0, 0.3);
+  --shadow-accent: rgba(255, 107, 53, 0.1);
+}
+
+/* Light mode colors */
+.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #2d2d2d;
+  --text-muted: #666666;
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --border-secondary: rgba(0, 0, 0, 0.05);
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-accent: rgba(63, 64, 59, 0.15);
+  
+  /* Light mode specific gradients */
+  --gradient-card-light: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+  --gradient-header-light: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  
+  /* Override gradient and accent colors for light mode */
+  --gradient-primary: linear-gradient(135deg, #3f403b 0%, #5a5d54 100%);
+  --accent-primary: #3f403b;
+  --accent-secondary: #5a5d54;
 }
 
 * {
@@ -20,10 +56,11 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom scrollbar */
@@ -32,7 +69,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -42,6 +79,19 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #ffd700, #ff6b35);
+}
+
+/* Light mode scrollbar adjustments */
+.light ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3f403b, #5a5d54);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #5a5d54, #3f403b);
 }
 
 /* Gradient text utility */
@@ -65,4 +115,71 @@ body {
 
 .glow-blue {
   box-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
+}
+
+/* Light mode glow effects */
+.light .glow-orange {
+  box-shadow: 0 0 20px rgba(63, 64, 59, 0.3);
+}
+
+/* Theme-aware accent colors */
+.accent-primary {
+  color: #ff6b35;
+}
+
+.accent-secondary {
+  color: #ffd700;
+}
+
+.light .accent-primary {
+  color: #3f403b;
+}
+
+.light .accent-secondary {
+  color: #5a5d54;
+}
+
+/* Theme-aware card backgrounds */
+.card-bg-dark {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-bg-light {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Accent colors */
+.accent-orange {
+  color: #ff6b35;
+}
+
+.accent-yellow {
+  color: #ffd700;
+}
+
+/* Theme-aware transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Ensure proper contrast in light mode */
+.light .gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode specific adjustments */
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
 }

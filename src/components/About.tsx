@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const About = () => {
+  const { theme } = useTheme()
+  
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -23,7 +26,9 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
+            className={`text-xl leading-relaxed max-w-3xl mx-auto ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}
           >
             I&apos;m a passionate learner with a strong foundation in robotics, android development
             and modern GPU programming. I thrive on building robust mobile apps, experimenting with 
@@ -38,9 +43,15 @@ const About = () => {
             viewport={{ once: true }}
             className="relative max-w-2xl mx-auto mt-12"
           >
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+            <div className={`rounded-2xl p-8 ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50' 
+                : 'bg-gradient-to-br from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 shadow-lg'
+            }`}>
               <Quote className="text-accent-orange mb-4 mx-auto" size={32} />
-              <p className="text-xl font-medium text-gray-200 italic">
+              <p className={`text-xl font-medium italic ${
+                theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
+              }`}>
                 &ldquo;Learning never exhausts the mind!&rdquo;
               </p>
             </div>

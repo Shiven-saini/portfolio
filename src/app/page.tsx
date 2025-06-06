@@ -10,9 +10,11 @@ import Achievements from '@/components/Achievements'
 import Learning from '@/components/Learning'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -23,7 +25,9 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      theme === 'dark' ? 'bg-black' : 'bg-gray-50'
+    }`}>
       <Header />
       <main>
         <Hero />

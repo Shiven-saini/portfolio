@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Bot, Cpu, Brain, Smartphone, Terminal, Code } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const Expertise = () => {
+  const { theme } = useTheme()
+  
   const domains = [
     {
       icon: Bot,
@@ -62,7 +65,9 @@ const Expertise = () => {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Expertise
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className={`text-xl ${
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+          }`}>
             Technologies and domains I&apos;m passionate about
           </p>
         </motion.div>
@@ -80,8 +85,12 @@ const Expertise = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className={`group relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                   domain.featured
-                    ? 'border-accent-orange/50 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/20'
-                    : 'border-gray-700/50 bg-gray-800/20 hover:border-gray-600 hover:bg-gray-800/40'
+                    ? theme === 'dark'
+                      ? 'border-accent-orange/50 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/20'
+                      : 'border-accent-orange/30 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/15'
+                    : theme === 'dark'
+                      ? 'border-gray-700/50 bg-gray-800/20 hover:border-gray-600 hover:bg-gray-800/40'
+                      : 'border-gray-200/50 bg-white/60 hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
                 }`}
               >
                 {domain.featured && (
@@ -92,7 +101,9 @@ const Expertise = () => {
                   <div className={`inline-flex p-3 rounded-xl ${
                     domain.featured 
                       ? 'bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20' 
-                      : 'bg-gray-700/50'
+                      : theme === 'dark'
+                        ? 'bg-gray-700/50'
+                        : 'bg-gray-100/80'
                   }`}>
                     <Icon className={`w-8 h-8 ${
                       domain.featured ? 'text-accent-orange' : 'text-accent-blue'
@@ -100,10 +111,14 @@ const Expertise = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3">
+                    <h3 className={`text-xl font-semibold mb-3 ${
+                      theme === 'dark' ? 'text-white' : 'text-gray-900'
+                    }`}>
                       {domain.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed mb-4">
+                    <p className={`leading-relaxed mb-4 ${
+                      theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                    }`}>
                       {domain.description}
                     </p>
                   </div>

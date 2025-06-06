@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Github } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const Contact = () => {
+  const { theme } = useTheme()
+  
   const contactItems = [
     {
       icon: Mail,
@@ -33,7 +36,9 @@ const Contact = () => {
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
               Let&apos;s Connect
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className={`text-xl ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+            }`}>
               Ready to collaborate on innovative projects
             </p>
           </div>
@@ -52,12 +57,32 @@ const Contact = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="group flex flex-col items-center text-center space-y-4 p-8 rounded-xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-sm hover:border-gray-600 hover:bg-gray-800/40 transition-all duration-300"
+                  className={`group flex flex-col items-center text-center space-y-4 p-8 rounded-xl transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'border border-gray-700/50 bg-gray-800/20 backdrop-blur-sm hover:border-gray-600 hover:bg-gray-800/40'
+                      : 'border border-gray-200/50 bg-white/60 backdrop-blur-sm hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                  }`}
                 >
-                  <div className={`p-4 rounded-lg bg-${item.color}/10 group-hover:bg-${item.color}/20 transition-colors duration-300`}>
-                    <Icon className={`w-8 h-8 text-${item.color} group-hover:scale-110 transition-transform duration-300`} />
+                  <div className={`p-4 rounded-lg transition-colors duration-300 ${
+                    item.color === 'accent-orange'
+                      ? theme === 'dark' 
+                        ? 'bg-orange-500/10 group-hover:bg-orange-500/20'
+                        : 'bg-accent-primary/10 group-hover:bg-accent-primary/20'
+                      : 'bg-gray-400/10 group-hover:bg-gray-400/20'
+                  }`}>
+                    <Icon className={`w-8 h-8 group-hover:scale-110 transition-transform duration-300 ${
+                      item.color === 'accent-orange' 
+                        ? theme === 'dark' 
+                          ? 'text-orange-500' 
+                          : 'text-accent-primary'
+                        : 'text-gray-400'
+                    }`} />
                   </div>
-                  <span className="text-lg font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
+                  <span className={`text-lg font-medium transition-colors duration-300 ${
+                    theme === 'dark' 
+                      ? 'text-gray-300 group-hover:text-white' 
+                      : 'text-gray-600 group-hover:text-gray-900'
+                  }`}>
                     {item.label}
                   </span>
                 </motion.a>
