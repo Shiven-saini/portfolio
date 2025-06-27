@@ -9,7 +9,7 @@ const GPUProgrammingPage = () => {
       id: 'hopkins-gpu-programming',
       title: 'GPU Programming Specialization',
       issuer: 'John Hopkins University',
-      date: 'June 2024',
+      date: 'June 2025',
       pdfPath: '/certificates/gpu-programming/GPU-Programming.pdf',
       thumbnail: '/images/certificates/GPU-Programming.jpg'
     },

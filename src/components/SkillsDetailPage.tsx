@@ -179,7 +179,7 @@ const SkillsDetailPage = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className={`group relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                  className={`group relative p-4 rounded-2xl border backdrop-blur-sm transition-all duration-500 h-full flex flex-col ${
                     theme === 'dark'
                       ? 'border-accent-orange/50 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/20'
                       : 'border-accent-orange/30 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/15'
@@ -188,20 +188,20 @@ const SkillsDetailPage = ({
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-orange to-accent-yellow rounded-t-2xl" />
                   
                   {certificate.thumbnail && (
-                    <div className="mb-4 rounded-lg overflow-hidden">
+                    <div className="mb-3 rounded-lg overflow-hidden">
                       <Image
                         src={certificate.thumbnail}
                         alt={`${certificate.title} thumbnail`}
-                        width={300}
-                        height={200}
-                        className="w-full h-32 object-cover object-top"
+                        width={400}
+                        height={350}
+                        className="w-full h-56 object-cover object-top"
                       />
                     </div>
                   )}
                   
-                  <div className="space-y-4">
+                  <div className="flex flex-col h-full">
                     <div>
-                      <h3 className={`text-lg font-semibold mb-2 ${
+                      <h3 className={`text-lg font-semibold mb-1 ${
                         theme === 'dark' ? 'text-white' : 'text-gray-900'
                       }`}>
                         {certificate.title}
@@ -211,12 +211,12 @@ const SkillsDetailPage = ({
                       }`}>
                         {certificate.issuer}
                       </p>
-                      <p className="text-sm text-accent-orange">
+                      <p className="text-sm text-accent-orange mb-3">
                         {certificate.date}
                       </p>
                     </div>
                     
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 mt-auto">
                       <button
                         onClick={() => handleDownloadCertificate(certificate.pdfPath, certificate.title)}
                         className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-accent-orange text-white rounded-lg hover:bg-accent-orange/90 transition-colors"
@@ -262,14 +262,14 @@ const SkillsDetailPage = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className={`group relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                  className={`group relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-500 h-full flex flex-col ${
                     theme === 'dark'
                       ? 'border-gray-700/50 bg-gray-800/20 hover:border-gray-600 hover:bg-gray-800/40'
                       : 'border-gray-200/50 bg-white/60 hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
                   }`}
                 >
-                  <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden">
+                  <div className="flex flex-col h-full">
+                    <div className="rounded-lg overflow-hidden mb-4">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -279,7 +279,7 @@ const SkillsDetailPage = ({
                       />
                     </div>
                     
-                    <div>
+                    <div className="flex-grow">
                       <h3 className={`text-xl font-semibold mb-3 ${
                         theme === 'dark' ? 'text-white' : 'text-gray-900'
                       }`}>
@@ -290,20 +290,20 @@ const SkillsDetailPage = ({
                       }`}>
                         {project.description}
                       </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 text-sm rounded-full border bg-accent-blue/10 border-accent-blue/30 text-accent-blue"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 text-sm rounded-full border bg-accent-blue/10 border-accent-blue/30 text-accent-blue"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 mt-auto">
                       <a
                         href={project.githubUrl}
                         target="_blank"

@@ -6,36 +6,36 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 const AIEngineeringPage = () => {
   const certificates = [
     {
-      id: 'langchain-certification',
-      title: 'LangChain Development Certification',
-      issuer: 'LangChain Academy',
-      date: 'May 2024',
-      pdfPath: '/certificates/ai-engineering/langchain-certification.pdf',
-      thumbnail: '/images/certificates/langchain-certification-thumb.svg'
+      id: 'google-ai-essentials',
+      title: 'Google AI Essentials',
+      issuer: 'Google',
+      date: 'June 2025',
+      pdfPath: '/certificates/ai-engineering/Google-AI-Essentials.pdf',
+      thumbnail: '/images/certificates/Google-AI-Essentials.jpg'
     },
     {
-      id: 'vllm-optimization',
-      title: 'vLLM Performance Optimization',
-      issuer: 'Berkeley SkyLab',
-      date: 'April 2024',
-      pdfPath: '/certificates/ai-engineering/vllm-optimization.pdf',
-      thumbnail: '/images/certificates/vllm-optimization-thumb.svg'
+      id: 'nvidia-ai-operations',
+      title: 'AI Infrastructure and Operations Fundamentals',
+      issuer: 'Nvidia',
+      date: 'June 2025',
+      pdfPath: '/certificates/ai-engineering/Nvidia-AI-Operations.pdf',
+      thumbnail: '/images/certificates/Nvidia-AI-Operations.jpg'
     },
     {
-      id: 'rag-systems',
-      title: 'Advanced RAG Systems Design',
-      issuer: 'AI Infrastructure Institute',
-      date: 'March 2024',
-      pdfPath: '/certificates/ai-engineering/rag-systems.pdf',
-      thumbnail: '/images/certificates/rag-systems-thumb.svg'
+      id: 'llmops',
+      title: 'Large Language Model Operations',
+      issuer: 'Duke University',
+      date: 'June 2025',
+      pdfPath: '/certificates/ai-engineering/LLMops.pdf',
+      thumbnail: '/images/certificates/LLMops.jpg'
     },
     {
-      id: 'ml-deployment',
-      title: 'ML Model Deployment at Scale',
-      issuer: 'MLOps Academy',
-      date: 'February 2024',
-      pdfPath: '/certificates/ai-engineering/ml-deployment.pdf',
-      thumbnail: '/images/certificates/ml-deployment-thumb.svg'
+      id: 'ibm-agentic-ai',
+      title: 'IBM RAG and Agentic AI (Ongoing)',
+      issuer: 'IBM',
+      date: 'Expected August 2025',
+      pdfPath: '/certificates/ai-engineering/fundamentals-agent.pdf',
+      thumbnail: '/images/certificates/fundamentals-agent.jpg'
     }
   ]
 

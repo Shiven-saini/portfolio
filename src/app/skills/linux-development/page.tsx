@@ -5,7 +5,14 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 
 const LinuxDevelopmentPage = () => {
   const certificates = [
-    // No certificates for Linux Development yet
+    {
+      id: 'linux-foundation',
+      title: 'Open Source Software Development, Linux And Git',
+      issuer: 'The Linux Foundation',
+      date: 'June 2025',
+      pdfPath: '/certificates/linux-development/The-Linux-Foundation.pdf',
+      thumbnail: '/images/certificates/The-Linux-Foundation.jpg'
+    }
   ]
 
   const projects = [
