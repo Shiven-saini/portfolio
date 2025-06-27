@@ -5,65 +5,34 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 
 const RoboticsPage = () => {
   const certificates = [
-    {
-      id: 'ros2-fundamentals',
-      title: 'ROS2 Fundamentals Certification',
-      issuer: 'The Construct',
-      date: 'March 2024',
-      pdfPath: '/certificates/robotics/ros2-fundamentals.pdf',
-      thumbnail: '/images/certificates/ros2-fundamentals-thumb.svg'
-    },
-    {
-      id: 'opencv-computer-vision',
-      title: 'Computer Vision with OpenCV',
-      issuer: 'OpenCV University',
-      date: 'February 2024',
-      pdfPath: '/certificates/robotics/opencv-computer-vision.pdf',
-      thumbnail: '/images/certificates/opencv-computer-vision-thumb.svg'
-    },
-    {
-      id: 'matlab-robotics',
-      title: 'MATLAB for Robotics and Control Systems',
-      issuer: 'MathWorks',
-      date: 'January 2024',
-      pdfPath: '/certificates/robotics/matlab-robotics.pdf',
-      thumbnail: '/images/certificates/matlab-robotics-thumb.svg'
-    }
+
   ]
 
   const projects = [
     {
-      id: 'self-balancing-robot',
-      title: 'Self-Balancing Vehicle with PID Control',
-      description: 'Autonomous self-balancing robot using PID controllers for stabilization. Features real-time sensor fusion, gyroscope and accelerometer integration, and adaptive control algorithms for dynamic balance maintenance.',
+      id: 'lunar-scout',
+      title: 'E-Yantra 2023: Lunar Scout - Self-Balancing Bike',
+      description: 'Designed and built an omni‑wheeled, self‑balancing scout robot intended for lunar surface exploration. Developed a virtual prototype in CoppeliaSim and implemented control algorithms in GNU Octave. Employed PID and LQR controllers for stability and smooth operation, integrating sensor fusion for accurate motion control.',
       technologies: ['PID Controllers', 'Arduino', 'IMU Sensors', 'C++'],
-      githubUrl: 'https://github.com/shivensaini/self-balancing-robot',
-      image: '/images/projects/self-balancing-robot.svg'
+      githubUrl: 'https://github.com/Shiven-saini/eyrc23_ls_1593',
+      image: '/images/projects/eyrc-2023.png'
     },
     {
-      id: 'ros2-navigation-stack',
-      title: 'ROS2 Autonomous Navigation System',
-      description: 'Complete autonomous navigation stack using ROS2 with SLAM, path planning, and obstacle avoidance. Includes sensor fusion from LiDAR and cameras for robust indoor and outdoor navigation.',
+      id: 'warehouse-drone',
+      title: 'E-Yantra 2024: Warehouse Drone - Autonomous Navigation',
+      description: 'Developed an autonomous drone system to navigate a simulated warehouse environment using ROS2 and Gazebo. Implemented real-time object detection to identify and scan target packages using OpenCV. Utilized Rviz2 for visualization and debugging of sensor data and drone trajectories. Focused on modular ROS node development and simulation-to-hardware transition readiness.',
       technologies: ['ROS2', 'SLAM', 'Path Planning', 'Python'],
-      githubUrl: 'https://github.com/shivensaini/ros2-navigation',
-      image: '/images/projects/ros2-navigation.svg'
+      githubUrl: 'https://github.com/Shiven-saini/eYRC-2421',
+      image: '/images/projects/eyrc-2024.gif'
     },
     {
-      id: 'opencv-object-tracking',
-      title: 'Computer Vision Object Tracking',
-      description: 'Real-time object detection and tracking system using OpenCV with multiple tracking algorithms. Features YOLO integration, Kalman filtering, and multi-object tracking capabilities.',
-      technologies: ['OpenCV', 'YOLO', 'Python', 'Computer Vision'],
-      githubUrl: 'https://github.com/shivensaini/opencv-tracking',
-      image: '/images/projects/opencv-tracking.svg'
+      id: 'opencv-samples',
+      title: 'OpenCV Learn along code samples',
+      description: 'I built the OpenCV-Samples repository to document my journey in learning and applying computer vision concepts using OpenCV. It features a collection of projects demonstrating key techniques like image processing, object tracking, and feature detection. The code, written in Python and/or C++, is well-documented, showcasing my ability to solve problems effectively and adapt to advanced computer vision challenges.',
+      technologies: ['OpenCV', 'Canny Edge', 'Affine Transformation', 'Python', 'C++'],
+      githubUrl: 'https://github.com/Shiven-saini/OpenCV-Samples',
+      image: '/images/projects/opencv-samples.png'
     },
-    {
-      id: 'matlab-control-system',
-      title: 'MATLAB Robotic Arm Controller',
-      description: 'Advanced control system for robotic arm manipulation using MATLAB Simulink. Implements inverse kinematics, trajectory planning, and force feedback control for precise manipulation tasks.',
-      technologies: ['MATLAB', 'Simulink', 'Control Systems', 'Kinematics'],
-      githubUrl: 'https://github.com/shivensaini/matlab-robotic-arm',
-      image: '/images/projects/matlab-robotic-arm.svg'
-    }
   ]
 
   return (

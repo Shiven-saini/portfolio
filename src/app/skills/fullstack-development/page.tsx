@@ -5,30 +5,6 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 
 const FullStackDevelopmentPage = () => {
   const certificates = [
-    {
-      id: 'nextjs-certification',
-      title: 'Next.js Expert Certification',
-      issuer: 'Vercel',
-      date: 'May 2024',
-      pdfPath: '/certificates/fullstack-development/nextjs-certification.pdf',
-      thumbnail: '/images/certificates/nextjs-certification-thumb.svg'
-    },
-    {
-      id: 'typescript-certification',
-      title: 'TypeScript Advanced Certification',
-      issuer: 'Microsoft',
-      date: 'April 2024',
-      pdfPath: '/certificates/fullstack-development/typescript-certification.pdf',
-      thumbnail: '/images/certificates/typescript-certification-thumb.svg'
-    },
-    {
-      id: 'nodejs-certification',
-      title: 'Node.js Application Development',
-      issuer: 'Node.js Foundation',
-      date: 'March 2024',
-      pdfPath: '/certificates/fullstack-development/nodejs-certification.pdf',
-      thumbnail: '/images/certificates/nodejs-certification-thumb.svg'
-    }
   ]
 
   const projects = [

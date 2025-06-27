@@ -27,7 +27,7 @@ const Expertise = () => {
       tags: ['ROS2', 'OpenCV', 'CoppeliaSim', 'Matlab', 'Fusion 360'],
       featured: true,
       detailsUrl: '/skills/robotics',
-      hasCertificates: true,
+      hasCertificates: false,
       hasProjects: true,
     },
     {
