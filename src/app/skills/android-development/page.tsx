@@ -27,7 +27,7 @@ const AndroidDevelopmentPage = () => {
     },
     {
       id:'ecell-app',
-      title: 'Ecell App : Entrepreneurship Cell DCRUSTM',
+      title: 'Ecell App : Entrepreneurship Cell DCRUSTM (WIP)',
       description: "As the lead developer, I am building the official Android app for our university's Entrepreneurship Cell to streamline internal operations and enhance communication within the society. The app features robust authentication and role-based authorization, enabling admins to manage user privileges and assign roles efficiently. It also includes a dynamic event gallery that highlights the society’s legacy and activities. Developed using native Android technologies such as Kotlin, Jetpack Compose, and Ktor for networking, the app is currently powered by a Spring Boot backend deployed on AWS EC2. Future plans include exploring migration to Supabase for improved scalability and maintenance. The project reflects a strong emphasis on clean architecture, user-centric design, and backend integration.",
       technologies: ['Kotlin', 'Jetpack Compose', 'Gradle', 'Material 3', 'Hilt', 'Ktor', 'Credential Manager', 'AWS EC2'],
       githubUrl: 'https://github.com/E-Cell-DCRUSTM/Ecell-Android/',
