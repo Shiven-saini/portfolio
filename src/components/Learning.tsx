@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Box, Compass, Gamepad2, Brain } from 'lucide-react'
+import { Box, Compass, Layers, Brain } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 
 const Learning = () => {
@@ -10,7 +10,7 @@ const Learning = () => {
   const learningItems = [
     { icon: Box, label: '3D Animation (Blender)' },
     { icon: Compass, label: 'CAD (Fusion 360)' },
-    { icon: Gamepad2, label: 'Game Engines (Godot)' },
+    { icon: Layers, label: 'Multimodal LLMs (Gemma 3n)' },
     { icon: Brain, label: 'ML/DL Frameworks' },
   ]
 

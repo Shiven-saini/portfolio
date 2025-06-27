@@ -42,7 +42,7 @@ export const trackNavigation = (section: string, source: string = 'unknown') => 
 }
 
 // Contact form interactions
-export const trackContactInteraction = (action: 'email_click' | 'linkedin_click' | 'github_click') => {
+export const trackContactInteraction = (action: 'email_click' | 'linkedin_click' | 'github_click' | 'twitter_click' | 'phone_click') => {
   track('contact_interaction', {
     action,
     timestamp: new Date().toISOString()

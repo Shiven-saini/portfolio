@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Trophy, Scale, Server } from 'lucide-react'
+import { Trophy, Briefcase, Server } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 
 const Achievements = () => {
@@ -14,14 +14,14 @@ const Achievements = () => {
       description: 'Two-time participant and team leader in India\'s biggest robotics competition, E-Yantra, demonstrating leadership and advanced robotics skills',
     },
     {
-      icon: Scale,
-      title: 'Self-Balancing Systems',
-      description: 'Developed self-balancing vehicles including bikes and inverted pendulums using advanced PID control systems',
+      icon: Briefcase,
+      title: 'Freelancing Feb 2025 - Present',
+      description: 'Delivering freelance projects in full stack and android projects, showcasing expertise in real-world applications',
     },
     {
       icon: Server,
       title: 'Linux Distro Maintainer',
-      description: 'Currently maintaining a specialized Linux distribution designed specifically for developers',
+      description: 'Currently maintaining a specialized Linux distribution Pithuu OS designed specifically for developers and active in a lot of OSS Projects.',
     },
   ]
 

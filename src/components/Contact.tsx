@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github } from 'lucide-react'
+import { Mail, Github, Twitter, Linkedin, Phone } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 import { trackContactInteraction } from '@/utils/analytics'
 
@@ -17,15 +17,36 @@ const Contact = () => {
       action: 'email_click' as const,
     },
     {
+      icon: Linkedin,
+      label: 'LinkedIn Profile',
+      href: 'https://www.linkedin.com/in/shiven-saini/',
+      color: 'blue-600',
+      action: 'linkedin_click' as const,
+    },
+    {
+      icon: Twitter,
+      label: '@rip_syntax',
+      href: 'https://x.com/rip_syntax',
+      color: 'blue-400',
+      action: 'twitter_click' as const,
+    },
+    {
       icon: Github,
       label: 'Shiven-saini',
       href: 'https://github.com/Shiven-saini',
       color: 'gray-400',
       action: 'github_click' as const,
     },
+    {
+      icon: Phone,
+      label: '+91 7404275751',
+      href: 'tel:+917404275751',
+      color: 'green-500',
+      action: 'phone_click' as const,
+    },
   ]
 
-  const handleContactClick = (action: 'email_click' | 'linkedin_click' | 'github_click') => {
+  const handleContactClick = (action: 'email_click' | 'linkedin_click' | 'github_click' | 'twitter_click' | 'phone_click') => {
     trackContactInteraction(action)
   }
 
@@ -50,9 +71,43 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {contactItems.map((item, index) => {
               const Icon = item.icon
+              
+              // Define color styles for each contact type
+              const getColorStyles = (color: string) => {
+                switch (color) {
+                  case 'accent-orange':
+                    return {
+                      bg: theme === 'dark' ? 'bg-orange-500/10 group-hover:bg-orange-500/20' : 'bg-orange-500/10 group-hover:bg-orange-500/20',
+                      text: theme === 'dark' ? 'text-orange-500' : 'text-orange-600'
+                    }
+                  case 'blue-600':
+                    return {
+                      bg: theme === 'dark' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' : 'bg-blue-500/10 group-hover:bg-blue-500/20',
+                      text: 'text-blue-500'
+                    }
+                  case 'blue-400':
+                    return {
+                      bg: theme === 'dark' ? 'bg-sky-400/10 group-hover:bg-sky-400/20' : 'bg-sky-400/10 group-hover:bg-sky-400/20',
+                      text: 'text-sky-400'
+                    }
+                  case 'green-500':
+                    return {
+                      bg: theme === 'dark' ? 'bg-green-500/10 group-hover:bg-green-500/20' : 'bg-green-500/10 group-hover:bg-green-500/20',
+                      text: 'text-green-500'
+                    }
+                  default:
+                    return {
+                      bg: 'bg-gray-400/10 group-hover:bg-gray-400/20',
+                      text: 'text-gray-400'
+                    }
+                }
+              }
+              
+              const colorStyles = getColorStyles(item.color)
+              
               return (
                 <motion.a
                   key={item.href}
@@ -71,20 +126,8 @@ const Contact = () => {
                       : 'border border-gray-200/50 bg-white/60 backdrop-blur-sm hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
                   }`}
                 >
-                  <div className={`p-4 rounded-lg transition-colors duration-300 ${
-                    item.color === 'accent-orange'
-                      ? theme === 'dark' 
-                        ? 'bg-orange-500/10 group-hover:bg-orange-500/20'
-                        : 'bg-accent-primary/10 group-hover:bg-accent-primary/20'
-                      : 'bg-gray-400/10 group-hover:bg-gray-400/20'
-                  }`}>
-                    <Icon className={`w-8 h-8 group-hover:scale-110 transition-transform duration-300 ${
-                      item.color === 'accent-orange' 
-                        ? theme === 'dark' 
-                          ? 'text-orange-500' 
-                          : 'text-accent-primary'
-                        : 'text-gray-400'
-                    }`} />
+                  <div className={`p-4 rounded-lg transition-colors duration-300 ${colorStyles.bg}`}>
+                    <Icon className={`w-8 h-8 group-hover:scale-110 transition-transform duration-300 ${colorStyles.text}`} />
                   </div>
                   <span className={`text-lg font-medium transition-colors duration-300 ${
                     theme === 'dark' 
