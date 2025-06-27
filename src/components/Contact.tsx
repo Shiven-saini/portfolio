@@ -1,9 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github, Twitter, Linkedin, Phone } from 'lucide-react'
+import { Mail, Github, Linkedin, Phone } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 import { trackContactInteraction } from '@/utils/analytics'
+
+// Custom X (formerly Twitter) icon component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+)
 
 const Contact = () => {
   const { theme } = useTheme()
@@ -24,7 +36,7 @@ const Contact = () => {
       action: 'linkedin_click' as const,
     },
     {
-      icon: Twitter,
+      icon: XIcon,
       label: '@rip_syntax',
       href: 'https://x.com/rip_syntax',
       color: 'blue-400',
