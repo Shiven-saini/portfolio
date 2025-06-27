@@ -1,13 +1,25 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bot, Cpu, Brain, Smartphone, Terminal, Code } from 'lucide-react'
+import { Bot, Cpu, Brain, Smartphone, Terminal, Code, ExternalLink } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import Link from 'next/link'
+
+interface Domain {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
+  tags: string[]
+  featured: boolean
+  detailsUrl?: string
+  hasCertificates?: boolean
+  hasProjects?: boolean
+}
 
 const Expertise = () => {
   const { theme } = useTheme()
   
-  const domains = [
+  const domains: Domain[] = [
     {
       icon: Bot,
       title: 'Robotics',
@@ -21,6 +33,9 @@ const Expertise = () => {
       description: 'Currently investing time in CUDA programming and GPU computing for high-performance parallel processing applications',
       tags: ['CUDA', 'GPU Computing', 'Parallel Processing'],
       featured: true,
+      detailsUrl: '/skills/gpu-programming',
+      hasCertificates: true,
+      hasProjects: true,
     },
     {
       icon: Brain,
@@ -42,6 +57,9 @@ const Expertise = () => {
       description: 'Currently maintaining a Linux distro for developers and deep expertise in system administration',
       tags: ['Linux Distros', 'System Admin', 'DevOps'],
       featured: false,
+      detailsUrl: '/skills/linux-development',
+      hasCertificates: false,
+      hasProjects: true,
     },
     {
       icon: Code,
@@ -137,6 +155,25 @@ const Expertise = () => {
                       </span>
                     ))}
                   </div>
+
+                  {(domain.hasCertificates || domain.hasProjects) && domain.detailsUrl && (
+                    <div className="pt-4 border-t border-gray-200/20">
+                      <Link
+                        href={domain.detailsUrl}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
+                          domain.featured
+                            ? 'border-accent-orange/50 text-accent-orange hover:border-accent-orange hover:bg-accent-orange/10'
+                            : 'border-accent-blue/50 text-accent-blue hover:border-accent-blue hover:bg-accent-blue/10'
+                        }`}
+                      >
+                        <span className="text-sm font-medium">
+                          View {domain.hasCertificates && domain.hasProjects ? 'Certificates & Projects' : 
+                                domain.hasCertificates ? 'Certificates' : 'Projects'}
+                        </span>
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )
