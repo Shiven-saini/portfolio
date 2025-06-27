@@ -86,7 +86,7 @@ const SkillsDetailPage = ({
     <div className={`min-h-screen transition-colors duration-300 ${
       theme === 'dark' ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -194,7 +194,7 @@ const SkillsDetailPage = ({
                         alt={`${certificate.title} thumbnail`}
                         width={300}
                         height={200}
-                        className="w-full h-32 object-cover"
+                        className="w-full h-32 object-cover object-top"
                       />
                     </div>
                   )}

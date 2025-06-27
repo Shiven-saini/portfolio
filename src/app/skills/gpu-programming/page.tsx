@@ -6,29 +6,29 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 const GPUProgrammingPage = () => {
   const certificates = [
     {
-      id: 'cuda-fundamentals',
-      title: 'CUDA Programming Fundamentals',
-      issuer: 'NVIDIA',
+      id: 'hopkins-gpu-programming',
+      title: 'GPU Programming Specialization',
+      issuer: 'John Hopkins University',
       date: 'June 2024',
-      pdfPath: '/certificates/gpu-programming/cuda-fundamentals.pdf',
-      thumbnail: '/images/certificates/cuda-fundamentals-thumb.svg'
+      pdfPath: '/certificates/gpu-programming/GPU-Programming.pdf',
+      thumbnail: '/images/certificates/GPU-Programming.jpg'
     },
-    {
-      id: 'gpu-optimization',
-      title: 'GPU Performance Optimization',
-      issuer: 'NVIDIA',
-      date: 'May 2024',
-      pdfPath: '/certificates/gpu-programming/gpu-optimization.pdf',
-      thumbnail: '/images/certificates/gpu-optimization-thumb.svg'
-    },
-    {
-      id: 'parallel-computing',
-      title: 'Parallel Computing with CUDA',
-      issuer: 'Coursera',
-      date: 'April 2024',
-      pdfPath: '/certificates/gpu-programming/parallel-computing-cuda.pdf',
-      thumbnail: '/images/certificates/parallel-computing-thumb.svg'
-    }
+    // {
+    //   id: 'gpu-optimization',
+    //   title: 'GPU Performance Optimization',
+    //   issuer: 'NVIDIA',
+    //   date: 'May 2024',
+    //   pdfPath: '/certificates/gpu-programming/gpu-optimization.pdf',
+    //   thumbnail: '/images/certificates/gpu-optimization-thumb.svg'
+    // },
+    // {
+    //   id: 'parallel-computing',
+    //   title: 'Parallel Computing with CUDA',
+    //   issuer: 'Coursera',
+    //   date: 'April 2024',
+    //   pdfPath: '/certificates/gpu-programming/parallel-computing-cuda.pdf',
+    //   thumbnail: '/images/certificates/parallel-computing-thumb.svg'
+    // }
   ]
 
   const projects = [
