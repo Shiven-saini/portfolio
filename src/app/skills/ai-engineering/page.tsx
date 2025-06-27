@@ -41,38 +41,22 @@ const AIEngineeringPage = () => {
 
   const projects = [
     {
-      id: 'vllm-inference-engine',
-      title: 'High-Performance LLM Inference Engine',
-      description: 'Scalable inference engine built with vLLM for serving large language models with optimized batching, quantization, and distributed serving capabilities. Achieves 3x throughput improvement over standard implementations.',
-      technologies: ['vLLM', 'Python', 'FastAPI', 'Docker', 'Kubernetes'],
-      githubUrl: 'https://github.com/shivensaini/vllm-inference-engine',
-      image: '/images/projects/vllm-inference.svg',
-      demoUrl: 'https://vllm-demo.yoursite.com'
+      id: 'ymir-app',
+      title: 'YMIR: Yet Another Mock Interview and Revision Assistant',
+      description: 'I developed Ymir, a cutting-edge mock interview and revision assistant designed to revolutionize the way candidates prepare for technical interviews. Ymir generates tailored mock interview questions on any topic and evaluates the technical accuracy of responses using a Deepseek API. Additionally, the app leverages real-time webcam capture with the YOLOv8n ONNX model to ensure proper interview conditions by detecting if multiple people or smartphones are present in the frame.',
+      technologies: ['onnx','Python', 'Deepseek API', 'Yolov8', 'Next.js'],
+      githubUrl: 'https://github.com/Shiven-saini/ymir-app',
+      image: '/images/projects/ymir-app.png'
     },
     {
-      id: 'langchain-rag-system',
-      title: 'Enterprise RAG System with LangChain',
-      description: 'Production-ready Retrieval-Augmented Generation system using LangChain with vector databases, document chunking strategies, and advanced prompt engineering for enterprise knowledge management.',
-      technologies: ['LangChain', 'Pinecone', 'OpenAI', 'Python', 'PostgreSQL'],
-      githubUrl: 'https://github.com/shivensaini/enterprise-rag',
-      image: '/images/projects/langchain-rag.svg'
+      id: 'sana-comfyui',
+      title: 'Optimized Comfy UI Fork for Local Diffusion Image Generation with Nvidia Sana',
+      description: 'I have forked the original Nvidia Sana model repository and developed a custom version that generates diffusion images locally. This custom implementation is optimized to work with systems having only 7GB VRAM, reducing the original requirement of 9GB without compromising quality. The project demonstrates expertise in GPU resource optimization, custom node development, and advanced diffusion model techniques.',
+      technologies: ['comfyui','sana', 'gemma2', 'Q4_K_M', 'Diffusion', 'Ksampler'],
+      githubUrl: 'https://github.com/Shiven-saini/sana-comfyui',
+      image: '/images/projects/sana-comfyui.png'
     },
-    {
-      id: 'ml-pipeline-automation',
-      title: 'MLOps Pipeline with Auto-Scaling',
-      description: 'End-to-end ML pipeline automation with model versioning, A/B testing, monitoring, and auto-scaling capabilities. Includes experiment tracking and automated model deployment workflows.',
-      technologies: ['MLflow', 'Kubeflow', 'TensorFlow', 'PyTorch', 'Apache Airflow'],
-      githubUrl: 'https://github.com/shivensaini/mlops-pipeline',
-      image: '/images/projects/mlops-pipeline.svg'
-    },
-    {
-      id: 'multimodal-ai-system',
-      title: 'Multimodal AI Processing System',
-      description: 'Advanced AI system for processing text, images, and audio inputs using transformer architectures. Features cross-modal understanding, attention mechanisms, and unified embedding space.',
-      technologies: ['Transformers', 'PyTorch', 'Hugging Face', 'CLIP', 'Whisper'],
-      githubUrl: 'https://github.com/shivensaini/multimodal-ai',
-      image: '/images/projects/multimodal-ai.svg'
-    }
+
   ]
 
   return (

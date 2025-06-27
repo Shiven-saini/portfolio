@@ -3,43 +3,36 @@
 import { Code } from 'lucide-react'
 import SkillsDetailPage from '@/components/SkillsDetailPage'
 
+interface Certificate {
+  id: string
+  title: string
+  issuer: string
+  date: string
+  pdfPath: string
+  thumbnail?: string
+}
+
 const FullStackDevelopmentPage = () => {
-  const certificates = [
+  const certificates: Certificate[] = [
   ]
 
   const projects = [
     {
-      id: 'saas-platform',
-      title: 'Multi-Tenant SaaS Platform',
-      description: 'Comprehensive SaaS platform built with Next.js 14, featuring multi-tenancy, subscription management, real-time collaboration, and advanced analytics. Includes payment processing, user management, and scalable architecture.',
-      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/shivensaini/saas-platform',
-      image: '/images/projects/saas-platform.svg',
-      demoUrl: 'https://saas-platform-demo.vercel.app'
+      id: 'dcanvas-web',
+      title: 'Freelancing work : Dcanvas Web',
+      description: 'During a freelancing engagement from February 2025 to today, I had the opportunity to develop an innovative website for Dcanvas—a dynamic new firm specializing in poster design, image branding, and packaging design. Tailwind CSS ensures a responsive design across all devices, reflecting modern aesthetic and functional standards. Additionally, I integrated Google APIs to directly store form submissions into a linked Google Sheets account, streamlining data management and enabling real-time insights.',
+      technologies: ['Next.js', 'Tailwind CSS', 'Javascript', 'Framer-Motion', 'Google APIs'],
+      githubUrl: 'https://github.com/Shiven-saini/dcanvas-web',
+      demoUrl: 'https://dcanvas-web.vercel.app/',
+      image: '/images/projects/dcanvas-web.gif'
     },
     {
-      id: 'realtime-chat-app',
-      title: 'Real-time Chat Application',
-      description: 'Modern chat application with real-time messaging, file sharing, video calls, and group management. Features end-to-end encryption, message reactions, and cross-platform synchronization.',
-      technologies: ['Next.js', 'Socket.io', 'Node.js', 'MongoDB', 'WebRTC'],
-      githubUrl: 'https://github.com/shivensaini/realtime-chat',
-      image: '/images/projects/chat-app.svg'
-    },
-    {
-      id: 'ecommerce-dashboard',
-      title: 'Advanced E-Commerce Dashboard',
-      description: 'Comprehensive admin dashboard for e-commerce management with real-time analytics, inventory tracking, order management, and business intelligence features. Built with server-side rendering for optimal performance.',
-      technologies: ['Next.js', 'TypeScript', 'Prisma', 'Chart.js', 'Redis'],
-      githubUrl: 'https://github.com/shivensaini/ecommerce-dashboard',
-      image: '/images/projects/ecommerce-dashboard.svg'
-    },
-    {
-      id: 'api-management-platform',
-      title: 'API Management & Documentation Platform',
-      description: 'Complete API lifecycle management platform with automated documentation, testing, monitoring, and rate limiting. Features API versioning, webhook management, and developer portal.',
-      technologies: ['Node.js', 'Express', 'TypeScript', 'Swagger', 'Docker'],
-      githubUrl: 'https://github.com/shivensaini/api-management',
-      image: '/images/projects/api-management.svg'
+      id: 'dcanvas-web',
+      title: 'Ecell IPL Auction Manager',
+      description: 'As the Tech Lead of the Entrepreneurship Cell at my university, I led the technical development of Chase The Bid – a real-time mock IPL auction simulation event designed to combine business strategy with engaging entertainment. The event, conducted as part of E-Cell’s annual activities, aimed to simulate high-stakes decision-making under pressure, much like real IPL franchise bidding. I developed a custom Auction Management System using socket programming to ensure seamless, real-time updates for all participants. The system allowed auctioneers and bidders to interact live with dynamic player listings and responsive bid tracking.',
+      technologies: ['Node.js', 'Socket programming', 'socket.io', 'GSAP', 'Express.js'],
+      githubUrl: 'https://github.com/E-Cell-DCRUSTM/ipl-auction-manager',
+      image: '/images/projects/ecell-auction.gif'
     }
   ]
 

@@ -3,8 +3,17 @@
 import { Bot } from 'lucide-react'
 import SkillsDetailPage from '@/components/SkillsDetailPage'
 
+interface Certificate {
+  id: string
+  title: string
+  issuer: string
+  date: string
+  pdfPath: string
+  thumbnail?: string
+}
+
 const RoboticsPage = () => {
-  const certificates = [
+  const certificates: Certificate[] = [
 
   ]
 

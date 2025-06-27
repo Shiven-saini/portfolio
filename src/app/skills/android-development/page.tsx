@@ -6,71 +6,39 @@ import SkillsDetailPage from '@/components/SkillsDetailPage'
 const AndroidDevelopmentPage = () => {
   const certificates = [
     {
-      id: 'android-developer-certification',
-      title: 'Associate Android Developer Certification',
-      issuer: 'Google',
-      date: 'June 2024',
-      pdfPath: '/certificates/android-development/android-developer-certification.pdf',
-      thumbnail: '/images/certificates/android-developer-certification-thumb.svg'
+      id: 'meta-advanced-kotlin',
+      title: 'Advanced Kotlin Programming',
+      issuer: 'Meta',
+      date: 'April 2025',
+      pdfPath: '/certificates/android-development/meta-advanced-kotlin.pdf',
+      thumbnail: '/images/certificates/meta-advanced-kotlin.jpg'
     },
-    {
-      id: 'jetpack-compose-certification',
-      title: 'Jetpack Compose UI Development',
-      issuer: 'Android Developers',
-      date: 'May 2024',
-      pdfPath: '/certificates/android-development/jetpack-compose-certification.pdf',
-      thumbnail: '/images/certificates/jetpack-compose-certification-thumb.svg'
-    },
-    {
-      id: 'kotlin-certification',
-      title: 'Kotlin for Android Development',
-      issuer: 'JetBrains',
-      date: 'April 2024',
-      pdfPath: '/certificates/android-development/kotlin-certification.pdf',
-      thumbnail: '/images/certificates/kotlin-certification-thumb.svg'
-    }
   ]
 
   const projects = [
     {
-      id: 'e-commerce-android-app',
-      title: 'Modern E-Commerce Android App',
-      description: 'Full-featured e-commerce application built with Jetpack Compose, implementing clean architecture, MVVM pattern, and modern Android development practices. Features include payment integration, real-time notifications, and offline support.',
-      technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'Retrofit', 'Hilt'],
-      githubUrl: 'https://github.com/shivensaini/ecommerce-android',
-      image: '/images/projects/ecommerce-android.svg',
-      demoUrl: 'https://play.google.com/store/apps/details?id=com.yourapp'
+      id: 'alarmee-app',
+      title: 'Alarmee : An Alarm App on Steroids',
+      description: 'Alarmee is an over-engineered Android alarm application built using Kotlin, Jetpack Compose, and the AlarmManager API, designed to ensure effective wakefulness through interactive dismissal challenges such as grid-based puzzles, NFC tag scans, and QR code recognition. It adheres to Material 3 design guidelines for a modern and consistent UI, leverages ML Kit for QR code detection, and uses the Accompanist library for efficient permission handling. The app emphasizes reliability, modularity, and reboot resilience, making it a robust and extensible solution for advanced alarm functionality.',
+      technologies: ['Kotlin', 'Jetpack Compose', 'Gradle', 'Material 3', 'Hilt', 'Room', 'NFC', 'QR Code'],
+      githubUrl: 'https://github.com/shiven-saini/alarmee',
+      image: '/images/projects/alarmee-app.png',
+      demoUrl: 'https://github.com/Shiven-saini/Alarmee/releases/tag/hotfix-2'
     },
     {
-      id: 'fitness-tracker-app',
-      title: 'AI-Powered Fitness Tracker',
-      description: 'Comprehensive fitness tracking application with AI-powered workout recommendations, health metrics monitoring, and social features. Integrates with wearable devices and provides personalized fitness insights.',
-      technologies: ['Kotlin', 'TensorFlow Lite', 'HealthConnect', 'Coroutines'],
-      githubUrl: 'https://github.com/shivensaini/fitness-tracker',
-      image: '/images/projects/fitness-tracker.svg'
+      id:'ecell-app',
+      title: 'Ecell App : Entrepreneurship Cell DCRUSTM',
+      description: "As the lead developer, I am building the official Android app for our university's Entrepreneurship Cell to streamline internal operations and enhance communication within the society. The app features robust authentication and role-based authorization, enabling admins to manage user privileges and assign roles efficiently. It also includes a dynamic event gallery that highlights the society’s legacy and activities. Developed using native Android technologies such as Kotlin, Jetpack Compose, and Ktor for networking, the app is currently powered by a Spring Boot backend deployed on AWS EC2. Future plans include exploring migration to Supabase for improved scalability and maintenance. The project reflects a strong emphasis on clean architecture, user-centric design, and backend integration.",
+      technologies: ['Kotlin', 'Jetpack Compose', 'Gradle', 'Material 3', 'Hilt', 'Ktor', 'Credential Manager', 'AWS EC2'],
+      githubUrl: 'https://github.com/E-Cell-DCRUSTM/Ecell-Android/',
+      image: '/images/projects/ecell-app.png',
     },
-    {
-      id: 'task-management-app',
-      title: 'Collaborative Task Management',
-      description: 'Professional task management application with real-time collaboration, project tracking, and team productivity analytics. Features modern Material Design 3 UI and smooth animations.',
-      technologies: ['Kotlin', 'Firebase', 'Material Design 3', 'WorkManager'],
-      githubUrl: 'https://github.com/shivensaini/task-manager-android',
-      image: '/images/projects/task-manager.svg'
-    },
-    {
-      id: 'camera-ml-app',
-      title: 'Real-time Camera ML Processing',
-      description: 'Camera application with real-time machine learning processing for object detection, text recognition, and image enhancement. Utilizes CameraX and ML Kit for optimal performance.',
-      technologies: ['CameraX', 'ML Kit', 'TensorFlow Lite', 'OpenCV'],
-      githubUrl: 'https://github.com/shivensaini/camera-ml-app',
-      image: '/images/projects/camera-ml.svg'
-    }
   ]
 
   return (
     <SkillsDetailPage
       skillTitle="Android Development"
-      skillDescription="High-performance mobile applications with modern frameworks"
+      skillDescription="High-performance mobile applications with native kotlin and Jetpack Compose"
       skillIcon={Smartphone}
       certificates={certificates}
       projects={projects}
