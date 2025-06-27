@@ -33,16 +33,16 @@ const GPUProgrammingPage = () => {
 
   const projects = [
     {
-      id: 'matrix-multiplication',
-      title: 'CUDA Matrix Multiplication',
-      description: 'High-performance matrix multiplication implementation using CUDA with various optimization techniques including shared memory, tiling, and memory coalescing. Achieves 10x speedup over CPU implementation.',
+      id: 'cuSplit-Kernel',
+      title: 'cuSplit-Kernel - GPU Accelerated RGB Channel Separation Engine',
+      description: 'High-performance CUDA-based image processing application that leverages GPU parallel computing to extract RGB channels from batch image datasets. Built with custom CUDA kernels, OpenCV integration, and automated build pipeline for efficient large-scale image analysis workflows.',
       technologies: ['CUDA', 'C++', 'GPU Computing', 'Performance Optimization'],
       githubUrl: 'https://github.com/shivensaini/cuda-matrix-multiplication',
-      image: '/images/projects/matrix-multiplication.svg',
+      image: '/images/projects/cuSplit-Kernel.png',
       demoUrl: ''
     },
     {
-      id: 'raytracer',
+      id: 'cuSplit-Kernel',
       title: 'GPU-Accelerated Ray Tracer',
       description: 'Real-time ray tracing engine implemented in CUDA for rendering realistic lighting and reflections with parallel processing on GPU. Supports dynamic scenes and interactive camera controls.',
       technologies: ['CUDA', 'OpenGL', 'Ray Tracing', 'Computer Graphics'],
