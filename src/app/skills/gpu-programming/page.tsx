@@ -18,7 +18,7 @@ const GPUProgrammingPage = () => {
   const projects = [
     {
       id: 'cuSplit-Kernel',
-      title: 'cuSplit-Kernel - GPU Accelerated RGB Channel Separation Engine',
+      title: 'cuSplit-Kernel : GPU Accelerated RGB Channel Separation Engine',
       description: 'High-performance CUDA-based image processing application that leverages GPU parallel computing to extract RGB channels from batch image datasets. Built with custom CUDA kernels, OpenCV integration, and automated build pipeline for efficient large-scale image analysis workflows.',
       technologies: ['CUDA', 'C++', 'Cmake', 'OpenCV', 'GPU Computing'],
       githubUrl: 'https://github.com/Shiven-saini/cuSplit-Kernel',
@@ -27,7 +27,7 @@ const GPUProgrammingPage = () => {
     },
     {
       id: 'cuRay-Tracer',
-      title: 'cuRay-Tracer - Real-Time GPU-Accelerated Ray Tracing Engine',
+      title: 'cuRay-Tracer : Real-Time GPU Accelerated Ray Tracing Engine',
       description: 'Advanced real-time ray tracing engine built with CUDA and OpenGL, featuring interactive 3D rendering, dynamic lighting controls, and cross-platform compatibility. Demonstrates expertise in GPU parallel computing, computer graphics algorithms, and high-performance real-time rendering pipelines.',
       technologies: ['CUDA', 'OpenGL', 'Ray Tracing', 'Computer Graphics'],
       githubUrl: 'https://github.com/Shiven-saini/cuRay-Tracer',

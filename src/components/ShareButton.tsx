@@ -3,13 +3,15 @@
 import { useState } from 'react'
 import { Share2, Check, Copy } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { trackShare } from '@/utils/analytics'
 
 interface ShareButtonProps {
   url: string
   title: string
+  domain?: string
 }
 
-const ShareButton = ({ url, title }: ShareButtonProps) => {
+const ShareButton = ({ url, title, domain = 'unknown' }: ShareButtonProps) => {
   const { theme } = useTheme()
   const [copied, setCopied] = useState(false)
 
@@ -20,6 +22,8 @@ const ShareButton = ({ url, title }: ShareButtonProps) => {
           title,
           url
         })
+        // Track successful native share
+        trackShare(domain, 'native_share')
       } catch (error) {
         // Fallback to copy to clipboard
         copyToClipboard()
@@ -34,6 +38,8 @@ const ShareButton = ({ url, title }: ShareButtonProps) => {
       await navigator.clipboard.writeText(url)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      // Track clipboard copy
+      trackShare(domain, 'clipboard_copy')
     } catch (error) {
       console.error('Failed to copy:', error)
     }

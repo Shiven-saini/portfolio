@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import ShareButton from './ShareButton'
+import { trackCertificateDownload, trackProjectView, trackSkillPageView } from '@/utils/analytics'
 
 interface Certificate {
   id: string
@@ -52,8 +53,12 @@ const SkillsDetailPage = ({
       setShowBackToTop(window.scrollY > 300)
     }
     window.addEventListener('scroll', handleScroll)
+    
+    // Track skill page view
+    trackSkillPageView(skillTitle)
+    
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [skillTitle])
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -61,6 +66,9 @@ const SkillsDetailPage = ({
 
   const handleDownloadCertificate = async (pdfPath: string, title: string) => {
     try {
+      // Track the download attempt
+      trackCertificateDownload(title, skillTitle)
+      
       const response = await fetch(pdfPath)
       if (!response.ok) {
         alert('Certificate file not found. Please check if the file exists.')
@@ -106,6 +114,7 @@ const SkillsDetailPage = ({
             <ShareButton 
               url={typeof window !== 'undefined' ? window.location.href : ''}
               title={`${skillTitle} - Skills & Expertise`}
+              domain="Skills"
             />
           </div>
 
@@ -308,6 +317,7 @@ const SkillsDetailPage = ({
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackProjectView(project.title, skillTitle, 'github')}
                         className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-accent-orange text-white rounded-lg hover:bg-accent-orange/90 transition-colors"
                       >
                         <Github className="w-4 h-4" />
@@ -318,6 +328,7 @@ const SkillsDetailPage = ({
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackProjectView(project.title, skillTitle, 'demo')}
                           className={`px-4 py-2 border border-accent-orange text-accent-orange rounded-lg hover:bg-accent-orange/10 transition-colors ${
                             theme === 'dark' ? 'hover:bg-accent-orange/20' : ''
                           }`}

@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
+import { trackNavigation } from '@/utils/analytics'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,6 +33,8 @@ const Header = () => {
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+      // Track navigation event
+      trackNavigation(href.replace('#', ''), 'header_navigation')
     }
     setIsMobileMenuOpen(false)
   }

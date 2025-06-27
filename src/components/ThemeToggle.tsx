@@ -3,13 +3,20 @@
 import { motion } from 'framer-motion'
 import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { trackThemeToggle } from '@/utils/analytics'
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme()
 
+  const handleToggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    trackThemeToggle(newTheme)
+    toggleTheme()
+  }
+
   return (
     <motion.button
-      onClick={toggleTheme}
+      onClick={handleToggleTheme}
       className={`relative p-2 rounded-full transition-all duration-300 group ${
         theme === 'dark'
           ? 'bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-yellow-400/30'

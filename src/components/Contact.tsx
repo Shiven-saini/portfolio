@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Github } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { trackContactInteraction } from '@/utils/analytics'
 
 const Contact = () => {
   const { theme } = useTheme()
@@ -13,14 +14,20 @@ const Contact = () => {
       label: 'shiven.career@proton.me',
       href: 'mailto:shiven.career@proton.me',
       color: 'accent-orange',
+      action: 'email_click' as const,
     },
     {
       icon: Github,
       label: 'Shiven-saini',
       href: 'https://github.com/Shiven-saini',
       color: 'gray-400',
+      action: 'github_click' as const,
     },
   ]
+
+  const handleContactClick = (action: 'email_click' | 'linkedin_click' | 'github_click') => {
+    trackContactInteraction(action)
+  }
 
   return (
     <section id="contact" className="py-24 relative">
@@ -52,6 +59,7 @@ const Contact = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleContactClick(item.action)}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
