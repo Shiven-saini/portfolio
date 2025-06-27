@@ -26,6 +26,9 @@ const Expertise = () => {
       description: 'Extensive hands-on experience with PID controllers, self-balancing vehicles, MATLAB, ROS2, and OpenCV for vision-driven robotics solutions',
       tags: ['PID Controllers', 'ROS2', 'OpenCV', 'MATLAB'],
       featured: true,
+      detailsUrl: '/skills/robotics',
+      hasCertificates: true,
+      hasProjects: true,
     },
     {
       icon: Cpu,
@@ -43,6 +46,9 @@ const Expertise = () => {
       description: 'Building AI infrastructure with vLLM, LangChain, RAGs, and ML/DL frameworks for scalable AI solutions',
       tags: ['vLLM', 'LangChain', 'RAGs', 'ML/DL'],
       featured: true,
+      detailsUrl: '/skills/ai-engineering',
+      hasCertificates: true,
+      hasProjects: true,
     },
     {
       icon: Smartphone,
@@ -50,6 +56,9 @@ const Expertise = () => {
       description: 'Professional experience building scalable, high-performance Android applications with modern frameworks',
       tags: ['Kotlin', 'Jetpack Compose', 'Architecture'],
       featured: false,
+      detailsUrl: '/skills/android-development',
+      hasCertificates: true,
+      hasProjects: true,
     },
     {
       icon: Terminal,
@@ -67,6 +76,9 @@ const Expertise = () => {
       description: 'End-to-end web applications with modern frameworks and technologies',
       tags: ['Next.js', 'Node.js', 'TypeScript'],
       featured: false,
+      detailsUrl: '/skills/fullstack-development',
+      hasCertificates: true,
+      hasProjects: true,
     },
   ]
 
