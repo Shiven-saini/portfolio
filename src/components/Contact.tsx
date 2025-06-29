@@ -83,7 +83,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="space-y-4 sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:space-y-0 max-w-5xl mx-auto">
             {contactItems.map((item, index) => {
               const Icon = item.icon
               
@@ -132,22 +132,29 @@ const Contact = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className={`group flex flex-col items-center text-center space-y-4 p-8 rounded-xl transition-all duration-300 ${
+                  className={`group transition-all duration-300 rounded-xl ${
                     theme === 'dark'
                       ? 'border border-gray-700/50 bg-gray-800/20 backdrop-blur-sm hover:border-gray-600 hover:bg-gray-800/40'
                       : 'border border-gray-200 bg-white backdrop-blur-sm hover:border-gray-300 hover:bg-gray-50 shadow-md hover:shadow-lg'
-                  }`}
+                  } 
+                  // Mobile: horizontal layout with compact design
+                  flex sm:flex-col items-center sm:text-center p-4 sm:p-8 space-x-4 sm:space-x-0 sm:space-y-4`}
                 >
-                  <div className={`p-4 rounded-lg transition-colors duration-300 ${colorStyles.bg}`}>
-                    <Icon className={`w-8 h-8 group-hover:scale-110 transition-transform duration-300 ${colorStyles.text}`} />
+                  {/* Icon container - smaller on mobile */}
+                  <div className={`p-3 sm:p-4 rounded-lg transition-colors duration-300 flex-shrink-0 ${colorStyles.bg}`}>
+                    <Icon className={`w-6 h-6 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform duration-300 ${colorStyles.text}`} />
                   </div>
-                  <span className={`text-lg font-medium transition-colors duration-300 ${
-                    theme === 'dark' 
-                      ? 'text-gray-300 group-hover:text-white' 
-                      : 'text-gray-600 group-hover:text-gray-900'
-                  }`}>
-                    {item.label}
-                  </span>
+                  
+                  {/* Text content - left aligned on mobile, centered on desktop */}
+                  <div className="flex-1 sm:flex-none text-left sm:text-center">
+                    <span className={`text-base sm:text-lg font-medium transition-colors duration-300 break-all sm:break-normal ${
+                      theme === 'dark' 
+                        ? 'text-gray-300 group-hover:text-white' 
+                        : 'text-gray-600 group-hover:text-gray-900'
+                    }`}>
+                      {item.label}
+                    </span>
+                  </div>
                 </motion.a>
               )
             })}
