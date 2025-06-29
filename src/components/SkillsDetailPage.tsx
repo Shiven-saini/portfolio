@@ -119,8 +119,14 @@ const SkillsDetailPage = ({
           </div>
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20">
-              <SkillIcon className="w-10 h-10 text-accent-orange" />
+            <div className={`inline-flex p-4 rounded-xl ${
+              theme === 'dark'
+                ? 'bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20'
+                : 'bg-gradient-to-br from-orange-100 to-yellow-100'
+            }`}>
+              <SkillIcon className={`w-10 h-10 ${
+                theme === 'dark' ? 'text-accent-orange' : 'text-orange-600'
+              }`} />
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-2">
@@ -140,11 +146,13 @@ const SkillsDetailPage = ({
               <div className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
                 theme === 'dark'
                   ? 'border-gray-700/50 bg-gray-800/20'
-                  : 'border-gray-200/50 bg-white/60'
+                  : 'border-orange-200 bg-orange-50'
               }`}>
-                <FileText className="w-4 h-4 text-accent-orange" />
+                <FileText className={`w-4 h-4 ${
+                  theme === 'dark' ? 'text-accent-orange' : 'text-orange-600'
+                }`} />
                 <span className={`text-sm font-medium ${
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                  theme === 'dark' ? 'text-gray-300' : 'text-orange-800'
                 }`}>
                   {certificates.length} Certificate{certificates.length !== 1 ? 's' : ''}
                 </span>
@@ -154,11 +162,13 @@ const SkillsDetailPage = ({
               <div className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
                 theme === 'dark'
                   ? 'border-gray-700/50 bg-gray-800/20'
-                  : 'border-gray-200/50 bg-white/60'
+                  : 'border-blue-200 bg-blue-50'
               }`}>
-                <Github className="w-4 h-4 text-accent-blue" />
+                <Github className={`w-4 h-4 ${
+                  theme === 'dark' ? 'text-accent-blue' : 'text-blue-600'
+                }`} />
                 <span className={`text-sm font-medium ${
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                  theme === 'dark' ? 'text-gray-300' : 'text-blue-800'
                 }`}>
                   {projects.length} Project{projects.length !== 1 ? 's' : ''}
                 </span>
@@ -176,7 +186,9 @@ const SkillsDetailPage = ({
             className="mb-20"
           >
             <div className="flex items-center gap-3 mb-8">
-              <FileText className="w-6 h-6 text-accent-orange" />
+              <FileText className={`w-6 h-6 ${
+                theme === 'dark' ? 'text-accent-orange' : 'text-orange-600'
+              }`} />
               <h2 className="text-3xl font-bold gradient-text">Certificates</h2>
             </div>
             
@@ -191,10 +203,14 @@ const SkillsDetailPage = ({
                   className={`group relative p-4 rounded-2xl border backdrop-blur-sm transition-all duration-500 h-full flex flex-col ${
                     theme === 'dark'
                       ? 'border-accent-orange/50 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/20'
-                      : 'border-accent-orange/30 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/15'
+                      : 'border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50 hover:border-orange-300 hover:shadow-xl hover:shadow-orange-100'
                   }`}
                 >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-orange to-accent-yellow rounded-t-2xl" />
+                  <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-accent-orange to-accent-yellow'
+                      : 'bg-gradient-to-r from-orange-400 to-yellow-400'
+                  }`} />
                   
                   {certificate.thumbnail && (
                     <div className="mb-3 rounded-lg overflow-hidden">
@@ -220,7 +236,9 @@ const SkillsDetailPage = ({
                       }`}>
                         {certificate.issuer}
                       </p>
-                      <p className="text-sm text-accent-orange mb-3">
+                      <p className={`text-sm mb-3 ${
+                        theme === 'dark' ? 'text-accent-orange' : 'text-orange-600'
+                      }`}>
                         {certificate.date}
                       </p>
                     </div>
@@ -259,7 +277,9 @@ const SkillsDetailPage = ({
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <Github className="w-6 h-6 text-accent-orange" />
+              <Github className={`w-6 h-6 ${
+                theme === 'dark' ? 'text-accent-orange' : 'text-orange-600'
+              }`} />
               <h2 className="text-3xl font-bold gradient-text">Projects</h2>
             </div>
             
@@ -274,7 +294,7 @@ const SkillsDetailPage = ({
                   className={`group relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-500 h-full flex flex-col ${
                     theme === 'dark'
                       ? 'border-gray-700/50 bg-gray-800/20 hover:border-gray-600 hover:bg-gray-800/40'
-                      : 'border-gray-200/50 bg-white/60 hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                      : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 shadow-md hover:shadow-lg'
                   }`}
                 >
                   <div className="flex flex-col h-full">
@@ -304,7 +324,11 @@ const SkillsDetailPage = ({
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm rounded-full border bg-accent-blue/10 border-accent-blue/30 text-accent-blue"
+                            className={`px-3 py-1 text-sm rounded-full border ${
+                              theme === 'dark'
+                                ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue'
+                                : 'bg-blue-50 border-blue-200 text-blue-700'
+                            }`}
                           >
                             {tech}
                           </span>
