@@ -32,9 +32,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     if (savedTheme) {
       setTheme(savedTheme)
     } else {
-      // Check system preference
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      setTheme(systemTheme)
+      // Default to dark mode for new visitors (no system preference check)
+      setTheme('dark')
     }
   }, [])
 
