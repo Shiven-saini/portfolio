@@ -22,7 +22,7 @@ const RoboticsPage = () => {
       id: 'lunar-scout',
       title: 'E-Yantra 2023: Lunar Scout - Self-Balancing Bike',
       description: 'Designed and built an omni‑wheeled, self‑balancing scout robot intended for lunar surface exploration. Developed a virtual prototype in CoppeliaSim and implemented control algorithms in GNU Octave. Employed PID and LQR controllers for stability and smooth operation, integrating sensor fusion for accurate motion control.',
-      technologies: ['PID Controllers', 'Arduino', 'IMU Sensors', 'C++'],
+      technologies: ['Gnu Octave', 'MATLAB', 'Python', 'CoppeliaSim', 'Fusion 360', 'Control Systems'],
       githubUrl: 'https://github.com/Shiven-saini/eyrc23_ls_1593',
       image: '/images/projects/eyrc-2023.png'
     },
