@@ -59,16 +59,18 @@ const Achievements = () => {
                 className={`group p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                   theme === 'dark'
                     ? 'border-gray-700/50 bg-gray-800/20 hover:border-accent-blue/50 hover:bg-gray-800/40'
-                    : 'border-gray-200/50 bg-white/60 hover:border-accent-blue/30 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                    : 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50 shadow-md hover:shadow-lg'
                 }`}
               >
                 <div className="text-center space-y-6">
                   <div className={`inline-flex p-4 rounded-xl transition-colors duration-300 ${
                     theme === 'dark'
                       ? 'bg-accent-blue/10 group-hover:bg-accent-blue/20'
-                      : 'bg-accent-blue/10 group-hover:bg-accent-blue/15'
+                      : 'bg-blue-50 group-hover:bg-blue-100'
                   }`}>
-                    <Icon className="w-10 h-10 text-accent-blue" />
+                    <Icon className={`w-10 h-10 ${
+                      theme === 'dark' ? 'text-accent-blue' : 'text-blue-600'
+                    }`} />
                   </div>
                   
                   <div>

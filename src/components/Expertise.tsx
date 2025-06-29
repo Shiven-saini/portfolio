@@ -117,26 +117,38 @@ const Expertise = () => {
                   domain.featured
                     ? theme === 'dark'
                       ? 'border-accent-orange/50 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/20'
-                      : 'border-accent-orange/30 bg-gradient-to-br from-accent-orange/5 to-accent-yellow/5 hover:border-accent-orange hover:shadow-2xl hover:shadow-accent-orange/15'
+                      : 'border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50 hover:border-orange-300 hover:shadow-xl hover:shadow-orange-100'
                     : theme === 'dark'
                       ? 'border-gray-700/50 bg-gray-800/20 hover:border-gray-600 hover:bg-gray-800/40'
-                      : 'border-gray-200/50 bg-white/60 hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                      : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 shadow-md hover:shadow-lg'
                 }`}
               >
                 {domain.featured && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-orange to-accent-yellow rounded-t-2xl" />
+                  <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-accent-orange to-accent-yellow'
+                      : 'bg-gradient-to-r from-orange-400 to-yellow-400'
+                  }`} />
                 )}
                 
                 <div className="flex flex-col h-full">
                   <div className={`inline-flex p-3 rounded-xl mb-6 w-fit ${
                     domain.featured 
-                      ? 'bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20' 
+                      ? theme === 'dark'
+                        ? 'bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20'
+                        : 'bg-gradient-to-br from-orange-100 to-yellow-100'
                       : theme === 'dark'
                         ? 'bg-gray-700/50'
-                        : 'bg-gray-100/80'
+                        : 'bg-gray-100'
                   }`}>
                     <Icon className={`w-8 h-8 ${
-                      domain.featured ? 'text-accent-orange' : 'text-accent-blue'
+                      domain.featured 
+                        ? theme === 'dark' 
+                          ? 'text-accent-orange' 
+                          : 'text-orange-600'
+                        : theme === 'dark'
+                          ? 'text-accent-blue'
+                          : 'text-blue-600'
                     }`} />
                   </div>
 
@@ -158,8 +170,12 @@ const Expertise = () => {
                           key={tag}
                           className={`px-3 py-1 text-sm rounded-full border ${
                             domain.featured
-                              ? 'bg-accent-orange/10 border-accent-orange/30 text-accent-orange'
-                              : 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue'
+                              ? theme === 'dark'
+                                ? 'bg-accent-orange/10 border-accent-orange/30 text-accent-orange'
+                                : 'bg-orange-50 border-orange-200 text-orange-700'
+                              : theme === 'dark'
+                                ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue'
+                                : 'bg-blue-50 border-blue-200 text-blue-700'
                           }`}
                         >
                           {tag}
@@ -174,8 +190,12 @@ const Expertise = () => {
                         href={domain.detailsUrl}
                         className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
                           domain.featured
-                            ? 'border-accent-orange/50 text-accent-orange hover:border-accent-orange hover:bg-accent-orange/10'
-                            : 'border-accent-blue/50 text-accent-blue hover:border-accent-blue hover:bg-accent-blue/10'
+                            ? theme === 'dark'
+                              ? 'border-accent-orange/50 text-accent-orange hover:border-accent-orange hover:bg-accent-orange/10'
+                              : 'border-orange-300 text-orange-700 hover:border-orange-400 hover:bg-orange-50'
+                            : theme === 'dark'
+                              ? 'border-accent-blue/50 text-accent-blue hover:border-accent-blue hover:bg-accent-blue/10'
+                              : 'border-blue-300 text-blue-700 hover:border-blue-400 hover:bg-blue-50'
                         }`}
                       >
                         <span className="text-sm font-medium">

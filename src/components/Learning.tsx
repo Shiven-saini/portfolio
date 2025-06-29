@@ -54,21 +54,23 @@ const Learning = () => {
                 className={`group p-6 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
                   theme === 'dark'
                     ? 'border-gray-700/50 bg-gray-800/20 hover:border-accent-blue/50 hover:bg-gray-800/40'
-                    : 'border-gray-200/50 bg-white/60 hover:border-accent-blue/30 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                    : 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50 shadow-md hover:shadow-lg'
                 }`}
               >
                 <div className="flex items-center space-x-4">
                   <div className={`p-3 rounded-lg transition-colors duration-300 ${
                     theme === 'dark'
                       ? 'bg-accent-blue/10 group-hover:bg-accent-blue/20'
-                      : 'bg-accent-blue/10 group-hover:bg-accent-blue/15'
+                      : 'bg-blue-50 group-hover:bg-blue-100'
                   }`}>
-                    <Icon className="w-6 h-6 text-accent-blue" />
+                    <Icon className={`w-6 h-6 ${
+                      theme === 'dark' ? 'text-accent-blue' : 'text-blue-600'
+                    }`} />
                   </div>
                   <span className={`font-medium transition-colors duration-300 ${
                     theme === 'dark'
                       ? 'text-white group-hover:text-accent-blue'
-                      : 'text-gray-900 group-hover:text-accent-blue'
+                      : 'text-gray-900 group-hover:text-blue-600'
                   }`}>
                     {item.label}
                   </span>

@@ -92,28 +92,28 @@ const Contact = () => {
                 switch (color) {
                   case 'accent-orange':
                     return {
-                      bg: theme === 'dark' ? 'bg-orange-500/10 group-hover:bg-orange-500/20' : 'bg-orange-500/10 group-hover:bg-orange-500/20',
+                      bg: theme === 'dark' ? 'bg-orange-500/10 group-hover:bg-orange-500/20' : 'bg-orange-50 group-hover:bg-orange-100',
                       text: theme === 'dark' ? 'text-orange-500' : 'text-orange-600'
                     }
                   case 'blue-600':
                     return {
-                      bg: theme === 'dark' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' : 'bg-blue-500/10 group-hover:bg-blue-500/20',
-                      text: 'text-blue-500'
+                      bg: theme === 'dark' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' : 'bg-blue-50 group-hover:bg-blue-100',
+                      text: theme === 'dark' ? 'text-blue-500' : 'text-blue-600'
                     }
                   case 'blue-400':
                     return {
-                      bg: theme === 'dark' ? 'bg-sky-400/10 group-hover:bg-sky-400/20' : 'bg-sky-400/10 group-hover:bg-sky-400/20',
-                      text: 'text-sky-400'
+                      bg: theme === 'dark' ? 'bg-sky-400/10 group-hover:bg-sky-400/20' : 'bg-sky-50 group-hover:bg-sky-100',
+                      text: theme === 'dark' ? 'text-sky-400' : 'text-sky-600'
                     }
                   case 'green-500':
                     return {
-                      bg: theme === 'dark' ? 'bg-green-500/10 group-hover:bg-green-500/20' : 'bg-green-500/10 group-hover:bg-green-500/20',
-                      text: 'text-green-500'
+                      bg: theme === 'dark' ? 'bg-green-500/10 group-hover:bg-green-500/20' : 'bg-green-50 group-hover:bg-green-100',
+                      text: theme === 'dark' ? 'text-green-500' : 'text-green-600'
                     }
                   default:
                     return {
-                      bg: 'bg-gray-400/10 group-hover:bg-gray-400/20',
-                      text: 'text-gray-400'
+                      bg: theme === 'dark' ? 'bg-gray-400/10 group-hover:bg-gray-400/20' : 'bg-gray-100 group-hover:bg-gray-200',
+                      text: theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                     }
                 }
               }
@@ -135,7 +135,7 @@ const Contact = () => {
                   className={`group flex flex-col items-center text-center space-y-4 p-8 rounded-xl transition-all duration-300 ${
                     theme === 'dark'
                       ? 'border border-gray-700/50 bg-gray-800/20 backdrop-blur-sm hover:border-gray-600 hover:bg-gray-800/40'
-                      : 'border border-gray-200/50 bg-white/60 backdrop-blur-sm hover:border-gray-300 hover:bg-white/80 shadow-lg hover:shadow-xl'
+                      : 'border border-gray-200 bg-white backdrop-blur-sm hover:border-gray-300 hover:bg-gray-50 shadow-md hover:shadow-lg'
                   }`}
                 >
                   <div className={`p-4 rounded-lg transition-colors duration-300 ${colorStyles.bg}`}>
